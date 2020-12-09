@@ -1,8 +1,10 @@
+<p><%= link_to "Back to repositories", '/repository/index' %></p>
+
 <h1>Repository / Tags</h1>
 
-<p><%= @repo[:name] %></p>
-<p>TAGS:</p>
-<ul class="ul">
+<p>Name: <%= @repo[:name] %></p>
+<p>Tags:</p>
+<ul class="list-unstyled">
     <% @repo[:tags].each do |tag|%>
     <li><%= tag %></li>
     <% end -%>
