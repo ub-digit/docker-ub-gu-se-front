@@ -1,0 +1,7 @@
+<h1>Repository#index</h1>
+
+<ul>
+<% @repos.each do |repo| %>
+    <li><a href="/show/<%= repo %>"><%= repo %></a></li>
+<% end -%>
+</ul>

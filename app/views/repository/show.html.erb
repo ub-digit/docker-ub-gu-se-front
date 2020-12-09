@@ -1,0 +1,9 @@
+<h1>Repository#show</h1>
+<p><%= @repo[:name] %></p>
+<p>
+    <ul>
+        <% @repo[:tags].each do |tag|%>
+        <li><%= tag %></li>
+        <% end -%>
+    </ul>
+</p>
