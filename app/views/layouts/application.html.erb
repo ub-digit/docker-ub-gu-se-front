@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project</title>
+    <title>Docker Registry (docker.ub.gu.se)</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <div class="container">
+    <header class="row">
+      <div class="col-12">
+        <div class="logo en"></div>  <!-- APPLY class="en" ON BODY FOR ENGLISH LOGO -->
+        <div class="headers">
+          <div class="level-1">Göteborgs universitetsbibliotek</div>
+          <div class="level-2">Docker Registry</div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+   <hr class="header-hr">
+
+  <div class="container main">
     <%= yield %>
+  </div>
   </body>
 </html>
