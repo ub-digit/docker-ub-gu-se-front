@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" media="all">
   </head>
 
   <body>
@@ -25,7 +26,16 @@
    <hr class="header-hr">
 
   <div class="container main">
-    <%= yield %>
+    <div class="row">
+      <div class="col-sm">
+        <div class="alert-area"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+          <%= yield %>
+        </div>
+    </div>
   </div>
   </body>
 </html>

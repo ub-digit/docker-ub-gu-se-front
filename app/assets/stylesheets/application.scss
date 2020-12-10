@@ -18,6 +18,11 @@
 @import "bootstrap";
 @import "font.scss";
 
+
+html {
+    overflow-y:scroll;
+}
+
 body {
     font-size: 16px;
     font-family: 'Open Sans';
@@ -85,4 +90,13 @@ header {
     }
 }
 /* END HEADER */
+
+.alert-area {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    margin-left: -150px;
+    width: 300px;
+    height: 100px;
+}
 

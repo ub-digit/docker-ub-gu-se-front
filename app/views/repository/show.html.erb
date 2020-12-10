@@ -1,11 +1,12 @@
-<p><%= link_to "Back to repositories", '/repository/index' %></p>
+<p><%= link_to "Back to images", '/repository/index' %></p>
 
-<h1>Repository / Tags</h1>
+<%= debug @params %>
 
-<p>Name: <%= @repo[:name] %></p>
-<p>Tags:</p>
+<h1>Images / Tags</h1>
+
+<h2><%= @repo["name"] %></h2>
 <ul class="list-unstyled">
-    <% @repo[:tags].each do |tag|%>
-    <li><%= tag %></li>
+    <% @repo["tags"].each do |tag|%>
+    <li><%=@repo["name"]%>:<%= tag %> <a href="#" class="btn-copy-to-clipboard" data-repo="<%=@repo["name"]%>:<%= tag %>">[Copy]</a></li>
     <% end -%>
 </ul>

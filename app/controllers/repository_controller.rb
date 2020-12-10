@@ -1,71 +1,29 @@
+require 'net/http'
 class RepositoryController < ApplicationController
+  @@baseURL = "https://docker.ub.gu.se/v2/"
+  @@user = "xljoha"
+  @@pwd = "Stockholm99)"
+
   def index
-    @repos = [
-      "ansible-demo-apache",
-      "bibmet-base",
-      "devdoc",
-      "devdocwiki",
-      "dflow-backend",
-      "dflow-frontend",
-      "dflow-postgres",
-      "docker.ub.gu.se/bibmet-base",
-      "ember",
-      "ember-deploy",
-      "ember-dev",
-      "envwebtest",
-      "eresdoc",
-      "fjarrkontrollen-forms",
-      "gena-server",
-      "gub-apache-2",
-      "gub-apache2",
-      "gukort2-mq-cardnum",
-      "gukort2-mq-receiver",
-      "gup-backend",
-      "gup-database",
-      "gup-ember",
-      "gup-frontend",
-      "gup-mq-sender",
-      "gup-postgres",
-      "gup-solr",
-      "gupea",
-      "haproxy",
-      "jruby-ibm",
-      "koha-base",
-      "koha-devbox",
-      "koha-inter",
-      "koha-master",
-      "koha2pg",
-      "legimuslinks",
-      "marcdb",
-      "mediawiki",
-      "mutt",
-      "noad",
-      "ojs",
-      "rails",
-      "rails-base",
-      "rails-bestall",
-      "rails-bibliotekskort",
-      "rails-ruby",
-      "tmsok",
-      "ubdeploy",
-      "urungi",
-      "xanjoo/cowsay",
-      "xanjoo/gup-mq-receiver",
-      "xanjoo/gup-mq-sender",
-      "xanjoo/tmsok",
-      "xberns/dblist-db",
-      "xberns/dblist-ex",
-      "xberns/envwebtest",
-      "xberns/experiment-ubuntu"
-      ]
+    uri = URI(@@baseURL + "_catalog")
+    req = Net::HTTP::Get.new(uri)
+    req.basic_auth @@user, @@pwd
+    res = Net::HTTP.start(uri.hostname, uri.port,  :use_ssl => true) {|http|
+      http.request(req)
+    }
+    result = JSON.parse(res.body)
+    @repos = result["repositories"]
   end
+
   def show
-    @repo = {
-      "name": "gup-mq-sender",
-      "tags": [
-        "release-20200409-1248",
-        "release-20200409-1412"
-      ]
-      }
+    repo = params[:repo]
+    uri = URI(@@baseURL + repo + "/tags/list")
+    req = Net::HTTP::Get.new(uri)
+    req.basic_auth @@user, @@pwd
+    res = Net::HTTP.start(uri.hostname, uri.port,  :use_ssl => true) {|http|
+      http.request(req)
+    }
+    @result = JSON.parse(res.body)
+    @repo = @result
   end
 end
