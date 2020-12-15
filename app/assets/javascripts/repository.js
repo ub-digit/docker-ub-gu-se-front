@@ -7,7 +7,6 @@ $( document ).ready(function() {
     });
 });
 
-
 function showSuccess() {
     var $temp = $('<div class="alert alert-info" role="alert">Copied to clipboard</diV>');
     $(".alert-area").html($temp.hide().fadeIn(100).delay(1000).fadeOut(100));
@@ -19,4 +18,4 @@ function copyToClipboard(str) {
     $temp.val(str).select();
     document.execCommand("copy");
     $temp.remove();
-  }
+}
