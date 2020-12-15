@@ -1,0 +1,4 @@
+---
+api_uri: https://docker.ub.gu.se/v2/
+user: xaccount
+password: password
