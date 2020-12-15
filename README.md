@@ -1,24 +1,10 @@
 # README
+Frontend (Rails/views) to docker.ub.gu.se/v1. It lists all images and associated tags.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Make a copy of config/config_full.yml.sample and name it config_full.yml
 
-Things you may want to cover:
+* Add your xaccount and password
 
-* Ruby version
+* Run docker-compose up
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Visit localhost:3000
