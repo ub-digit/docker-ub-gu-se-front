@@ -1,6 +1,6 @@
-<p><%= link_to "Back to images", '/repository/index' %></p>
+<p><%= link_to "Back to images", '/' %></p>
 
-<h1>Tags for <strong><%= @repo["name"] %></strong> </h1>
+<h1>Tags for <%= @repo["name"] %></h1>
 
 <ul class="list-unstyled">
     <% @repo["tags"].each do |tag|%>
