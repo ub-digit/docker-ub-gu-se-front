@@ -4,6 +4,6 @@
 
 <ul class="list-unstyled">
     <% @repo["tags"].each do |tag|%>
-    <li><%=@repo["name"]%>:<%= tag %> <a href="#" class="btn-copy-to-clipboard" title="Copy to clipboard" data-repo="<%=@repo["name"]%>:<%= tag %>">[Copy]</a></li>
+    <li>docker.ub.gu.se/<%=@repo["name"]%>:<%= tag %> <a href="#" class="btn-copy-to-clipboard" title="Copy to clipboard" data-repo="docker.ub.gu.se/<%=@repo["name"]%>:<%= tag %>">[Copy]</a></li>
     <% end -%>
 </ul>
