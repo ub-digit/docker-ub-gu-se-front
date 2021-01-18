@@ -2,8 +2,9 @@
 <p>
     List of images uploaded to docker.ub.gu.se.
 </p>
+
 <ul class="list-unstyled">
 <% @repos.each do |repo| %>
-    <li><a href="/show/<%= repo %>"><%= repo %></a></li>
+    <li><a href="/show/?id=<%= repo %>"><%= repo %></a></li>
 <% end -%>
 </ul>

@@ -1,0 +1,4 @@
+version: '3.5'
+services:
+  backend:
+    image: docker.ub.gu.se/docker-ub-gu-se:${GIT_REVISION}

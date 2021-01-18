@@ -1,8 +1,11 @@
 require 'net/http'
+
 class RepositoryController < ApplicationController
   @@baseURL = APP_CONFIG['api_uri']
   @@user = APP_CONFIG['user']
   @@pwd = APP_CONFIG['password']
+
+
 
   def index
     uri = URI(@@baseURL + "_catalog")
@@ -11,7 +14,7 @@ class RepositoryController < ApplicationController
   end
 
   def show
-    repo = params[:repo]
+    repo = params[:id]
     uri = URI(@@baseURL + repo + "/tags/list")
     @repo = getData(uri)
   end
