@@ -6,6 +6,10 @@
 
 /config/secrets.yml
 /config/config_full.yml
+
+# Ignore .env
+.env
+
 # Ignore bundler config.
 /.bundle
 
