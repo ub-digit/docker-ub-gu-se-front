@@ -9,6 +9,7 @@
 
 # Ignore .env
 /docker/.env
+/docker/
 
 # Ignore bundler config.
 /.bundle
