@@ -8,7 +8,7 @@
 /config/config_full.yml
 
 # Ignore .env
-.env
+/docker/.env
 
 # Ignore bundler config.
 /.bundle
