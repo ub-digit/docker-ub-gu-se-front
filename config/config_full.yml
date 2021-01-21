@@ -1,0 +1,4 @@
+---
+api_uri: <%= ENV["DOCKERFRONT_API_URL"] %>
+user: <%= ENV["DOCKERFRONT_API_USER"] %>
+password: <%= ENV["DOCKERFRONT_API_PWD"] %>
